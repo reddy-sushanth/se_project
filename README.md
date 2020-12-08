@@ -1,8 +1,12 @@
 ## Instructions to run the project
 
+
+install
+pip install flask
+
 Run the blockchain node server,
 
-sh
+
 $ export FLASK_APP=node_server.py
 $ flask run --port 8000
 
@@ -10,7 +14,7 @@ The application should be up and running at [http://localhost:8000](http://local
 
 In another terminal run the application,
 
-sh
+
 $ python run_app.py
 
 

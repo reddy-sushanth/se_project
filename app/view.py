@@ -27,6 +27,7 @@ def fetch_posts():
 			for tx in block["transactions"]:
 				tx["index"] = block["index"]
 				tx["hash"] = block["previous_hash"]
+				tx["nonce"] = block["nonce"]
 				content.append(tx)
 		global posts
 		posts = sorted(content, key=lambda k: k["timestamp"], reverse=True)

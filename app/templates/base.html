@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BlockText - A place to share thoughts</title>
+		<link rel="stylesheet" href="../static/stylesheet.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+	</head>
+	<body>
+		<div class="navbar">
+			<a class="navbar-item left" href = "#">Home</a>
+			<a class="navbar-item left" href = "#about-us">About-us</a>
+			<title>>BlockText</title>
+		</div>
+		<div class="title">
+			<h1 class="title-text">BlockText</h1>
+			<h1 class="subtitle-text">A place to share thoughts!</h1>
+		</div>
+		
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<ul>
+		{% for message in messages %}
+			<li>{{ message }} </li>
+		{% endfor %}
+		</ul>
+		{% endif %}
+		{% endwith %}
+		{% block content %}{% endblock %}
+		
+		<div id="about-us" class="about-us">
+			<h1 id="about-us-head">About Us</h1>
+			<hr>
+			<div class="row" style="justify-content: center">
+				<div class="col-md-3" >
+					<div class="card">
+						<img id="atharva" src="../static/img/atharva.jpg" alt="Avatar" style="width:100%">
+						<div class="container">
+							<h2><b>Atharva Deshpande</b></h2>
+							<h2>Masters in Computer Science</h2>
+							<p>Atharva is currently pursuing his Masters in Computer Science at Drexel University. He enjoys playing video games and is currently enjoying his best life in quarantine.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card">
+						<img src="../static/img/sushanth.jpg" alt="Avatar" style="width:100%">
+						<div class="container">
+							<h2><b>Sushanth Reddy</b></h2>
+							<h2>Masters in Computer Science</h2>
+							<p>Sushanth is currently pursuing his Masters in Computer Science at Drexel University. Apparently he loves going to hikes and taking photos in the wilderness.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card">
+						<img src="../static/img/sravya.jpg" alt="Avatar" style="width:100%">
+						<div class="container">
+							<h2><b>Sravya Atluri</b></h2>
+							<h2>Masters in Computer Science</h2>
+							<p>Sravya is currently pursuing her Masters in Computer Science at Drexel University. She loves going around and travelling a lot and is currenlt struggling sitting home in quarantine.</p>
+						</div>
+					</div>
+				</div>
+				</div>
+		</div>
+		<div class="footer">
+			<div class="footer-text">
+				<h3>We are happy that you shared your thoughts with us!</h3>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>

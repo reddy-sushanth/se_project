@@ -1,0 +1,46 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="content">
+		<center>
+			<br>
+			<form action="/submit" id="textform" method="post">
+				<textarea class="post-textarea" name="content" rows="10" cols="50" placeholder="Share your thoughts..."></textarea>
+				<br><br>
+				<input class="name-input" type="text" name="author" placeholder="Name">
+				<label for="difficulty">Choose difficulty level:</label>
+				<select name="difficulty" id="difficulty">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+				  </select> <br> <br>
+				<input class="btn" type="submit" value="Post">
+			</form>
+			<br>
+		</center>
+		<div class="inline-buttons">
+			<a id="mine-button" href="{{node_address}}/mine" target="_blank"><button>Request to mine</button></a>
+			<a id="resync-button"href="/"><button>Resync</button></a>
+		</div>
+		<div class="posts">
+			{% for post in posts %}
+			<div class="post_box">
+				<div class="post_box-header">
+					<div style="background: rgb(1, 10, 15) none repeat scroll 0% 0%; box-shadow: rgba(111, 113, 114, 0.521) 0 0 0 0.2rem;" class="post_box-avatar">{{post.author[0]}}</div>
+					<div class="name-header">{{post.author}}</div>
+					<div class="post_box-subtitle"><i>Posted at {{readable_time(post.timestamp)}}</i></div>
+				</div>
+				<div>
+					<div class="post_box-body">
+						<p>Message: {{post.content}}</p>
+						<p>Hash: {{post.hash}}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
